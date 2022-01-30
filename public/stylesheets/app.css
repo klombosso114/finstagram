@@ -1,0 +1,23 @@
+header {
+    background-color: #fed74f;
+    color: #3d377e;
+}
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: whitesmoke;
+}
+main{
+    background-color: #ffffff;
+    padding: 16px;
+}
+h2, h3, .actions {
+    color: #000000;
+}
+a.photo{
+    transition: padding 0.5s;
+}
+a.photo:hover{
+    padding: 10px; 
+}
+.my-class-name { }
+#my-unique-id { }
