@@ -16,7 +16,7 @@ class FinstagramPost < ActiveRecord::Base
             "#{time_ago_in_minutes.to_i} minutes ago"
         end
     end 
-    # New Stuff Start
+    
     def like_count
         self.likes.size
     end
@@ -24,6 +24,5 @@ class FinstagramPost < ActiveRecord::Base
     def comment_count
         self.comments.size
     end
-    # New Stuff End
 
 end

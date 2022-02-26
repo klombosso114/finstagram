@@ -2,7 +2,8 @@ helpers do
     def current_user
       User.find_by(id: session[:user_id])
     end
-  end
+end
+
 get '/' do
     @finstagram_posts = FinstagramPost.order(created_at: :desc)
     erb(:index)
@@ -14,7 +15,6 @@ get '/signup' do
 end
 
 post '/signup' do
-    
     email      = params[:email]
     avatar_url = params[:avatar_url]
     username   = params[:username]
@@ -23,17 +23,16 @@ post '/signup' do
     @user = User.new({ email: email, avatar_url: avatar_url, username: username, password: password })
 
     if @user.save
-
         redirect to('/login')
-    
     else
-
         erb(:signup)
     end
 end
+
 get '/login' do
     erb(:login)
 end
+
 post '/login' do
     username = params[:username]
     password = params[:password]
@@ -48,6 +47,7 @@ post '/login' do
         erb(:login)
     end
 end
+
 get '/logout' do
     session[:user_id] = nil
     redirect to('/')
@@ -65,11 +65,8 @@ post '/finstagram_posts' do
 
     if @finstagram_post.save
         redirect(to('/'))
-
     else
-
         erb(:"finstagram_posts/new")
-
     end
 end
 
@@ -79,7 +76,6 @@ get '/finstagram_posts/:id' do
 end
 
 post '/comments' do
-    
     text = params[:text]
     finstagram_post_id = params[:finstagram_post_id]
     
@@ -87,7 +83,6 @@ post '/comments' do
     comment.save
 
     redirect(back)
-
 end
 
 post '/likes' do
@@ -103,4 +98,4 @@ delete '/likes/:id' do
     like = Like.find(params[:id])
     like.destroy
     redirect(back)
-  end
+end
