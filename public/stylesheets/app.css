@@ -1,6 +1,6 @@
 header {
-    background-color: #fed74f;
-    color: #3d377e;
+    background-color: #154c79;
+    color: whitesmoke;
 }
 body {
     font-family: 'Roboto Serif', sans-serif;
@@ -21,5 +21,5 @@ a.photo:hover{
 }
 
 h1 a {
-    color: #3d377e;
+    color: whitesmoke;
 }
